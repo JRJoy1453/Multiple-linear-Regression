@@ -1,0 +1,12 @@
+Z = df[['horsepower', 'curb-weight', 'engine-size', 'highway-mpg']]
+Y_hat = lm.predict(Z)
+
+plt.figure(figsize=(width,height))
+ax1 = sns.distplot(df["price"], hist = False, color = "r", label = "Actual Value")
+sns.distplot(Y_hat, hist = False, color = "b", label = "Actual Value", ax = ax1)
+
+plt.title('Actual vs Fitted Values for Price')
+plt.xlabel('Price (in dollars)')
+plt.ylabel('Proportion of Cars')
+plt.show()
+plt.close()
